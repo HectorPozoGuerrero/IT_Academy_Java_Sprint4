@@ -8,29 +8,16 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class FruitaService {
 
-    @Autowired
-    private FruitaRepository fruitaRepository;
+public interface FruitaService {
 
-    public Fruita addFruita(Fruita fruita) {
-        return fruitaRepository.save(fruita);
-    }
+    Fruita addFruita(Fruita fruita);
 
-    public Fruita updateFruita(Fruita fruita) {
-        return fruitaRepository.save(fruita);
-    }
+    Fruita updateFruita(Fruita fruita);
 
-    public void deleteFruita(int id) {
-        fruitaRepository.deleteById(id);
-    }
+    void deleteFruita(int id);
 
-    public Optional<Fruita> getFruita(int id) {
-        return fruitaRepository.findById(id);
-    }
+    Optional<Fruita> getFruita(int id);
 
-    public List<Fruita> getAllFruita() {
-        return fruitaRepository.findAll();
-    }
+    List<Fruita> getAllFruita();
 }
